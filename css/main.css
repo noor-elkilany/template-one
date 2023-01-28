@@ -23,20 +23,20 @@ padding-left: 15px;
 padding-right: 15px;
 }
 /*small*/
-@media(min-width:768px){
+@media (min-width: 768px) {
 .container {
 width:750px;
 } 
 }
 /*medium*/
-@media(min-width:992px){
-.container{
+@media (min-width: 992px) {
+.container {
 width: 970px;
 }
 }
 /*large*/
-@media(min-width:1200px){
-.container{
+@media (min-width: 1200px) {
+.container {
 width: 1170px;
 }
 }
@@ -82,6 +82,10 @@ width: 1200px;
 /*end components*/
 /*start header*/
 .header {
+  position: fixed;
+  z-index: 100;
+  background-color:lavenderblush ;
+  width: 100%;
 padding: 20px;
 }
 .header .container {
@@ -112,9 +116,7 @@ height: 2px;
 .header .links .icon span:first-child {
 width: 100%;
 }
-.header .links .icon span:nth-child(2) {
-width: 60%;
-transition: var(--main-duration);
+.header .links .icon span:nth-child(2) { width: 60%; transition: var(--main-duration); -webkit-transition: var(--main-duration); -moz-transition: var(--main-duration); -ms-transition: var(--main-duration); -o-transition: var(--main-duration);
 }
 .header .links .icon span:last-child {
 width: 100%;
@@ -195,27 +197,39 @@ padding-top:var(--section-padding);
 padding-bottom:var(var(--section-padding));
 background-color:var(--section-background);
 }
-.features .container {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
-grid-gap: 20px;
+
+.features .container{
+  display: grid;
+  grid-template-columns: repeat(auto-fill , minmax(300px,1fr));
+  grid-gap: 20px;
 }
+
 .features .feat {
-padding: 20px;
-text-align: center;
+  padding: 20px;
+  text-align: center;
+  background-color: aliceblue;
 }
+
+.feat:hover{
+  background-color:lavenderblush;
+  cursor: pointer;
+}
+
 .features .feat i {
-color:var(--main-color);
+color: var(--main-color);
+font-size: 50px;
+
 }
 .features .feat h3 {
-font-weight: 800px;
+font-weight: 800;
 margin: 30px 0;
 }
 .features .feat p {
-line-height: 1.8;
+line-height: 1.6;
 color: #777;
 font-size: 17px;
 }
+/* end features */
 /* start services */
 .services {
 padding-top:var(--section-padding);
@@ -276,37 +290,47 @@ width:260px;
 display: none;
 }
 }
-/*end services*/   
-/*start protfolio*/
-.protfolio {
-padding-top:var(--section-padding);
-padding-bottom:var(--section-padding);
-background-color:var(--section-background);
-}
-.protfolio .protfolio-contant {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-gap: 30px;
-  margin-top: 80px;
-}
-.protfolio.protfolio-contant .card {
-background-color: white;
-}
-.protfolio .protfolio-contant .card img {
-  max-width: 100%;
+/*end services*/ 
+/* start portofolio */
+
+.portofolio {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
   }
-  .protfolio .protfolio-contant .card .info {
-    padding: 20px;
+  
+  .portofolio .portofolio-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-gap: 30px;
+      margin-top: 80px;
   }
-  .protfolio .protfolio-contant .card .info h3 {
-margin: 0;
-  }  
-  .protfolio .protfolio-contant .card .info p {
-color:#777;
-line-height: 1.6;
-margin: 0;
+  
+  .portofolio .portofolio-content .card {
+      background-color: white;
   }
-/*end protfolio*/
+  @media(max-width: 767px) {
+      .portofolio .portofolio-content .card h3 , p {
+           text-align: center;
+      }
+  }
+  
+  .portofolio .portofolio-content .card img {
+      max-width: 100%;
+      width: 100%;
+  }
+  .portofolio .portofolio-content .card .info {
+      padding: 20px;
+  }
+  .portofolio .portofolio-content .card .info h3 {
+  margin: 0;
+  }
+  .portofolio .portofolio-content .card .info p {
+  color: #777;
+  line-height: 1.7;
+  margin-bottom: 0;
+  }
+  /* end portofolio */
 /*start about*/
 .about {
   padding-top:var(--section-padding) ;
@@ -368,7 +392,13 @@ max-width: 100%;
 }
 .about-contant .text {
   flex-basis:calc(100% - 500px);
-padding-left:200px;
+  padding-left:200px;
+}
+@media (max-width: 767px) {
+  .about-contant .text {
+    padding-left: 0;
+    
+  }
 }
 .about-contant .text p:first-of-type {
 font-weight: bold;
